@@ -31,6 +31,7 @@ To learn more, and for a web-based interactive demo of this API, visit https://a
 6. Create an OAuth client ID:
     1. Under 'Application type', put 'Desktop application'.
     2. Download the client secret file, and save it into the same folder as this script under the name 'credentials.json'
-7. Add the ID of the Gmail thread you want to retrieve to the `THREAD_ID` variable. 
+7. Edit the `python-api-demo.py` file, and add the ID of the Gmail thread you want to retrieve to the `THREAD_ID` variable. 
     1. You can get the thread ID by running this js snippet in the Chrome developers console while viewing a Gmail thread: 
           `document.querySelector('[data-legacy-thread-id]').getAttribute('data-legacy-thread-id')`
+8. Run the script with: `python3 python-api-demo.py`
