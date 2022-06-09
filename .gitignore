@@ -5,6 +5,7 @@ token.json
 include/
 bin/
 pyvenv.cfg
+.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
