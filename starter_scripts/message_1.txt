@@ -1,0 +1,161 @@
+Delivered-To: alex.krupp@fwdeveryone.com
+Received: by 2002:a54:264b:0:0:0:0:0 with SMTP id a11csp1894189ecp;
+        Mon, 25 Jul 2022 09:38:27 -0700 (PDT)
+X-Received: by 2002:a17:902:f68e:b0:16d:784f:ba with SMTP id l14-20020a170902f68e00b0016d784f00bamr5460003plg.174.1658767107733;
+        Mon, 25 Jul 2022 09:38:27 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1658767107; cv=none;
+        d=google.com; s=arc-20160816;
+        b=K59HBAZkpZNDyBsleKpsxnGAt6I5sVIKTbBDsD+Qqnuhsm4XP4+JJGepvVtNlppGCq
+         vVy6Pa11j5Xit8S3ua3V1hZA2RV+/aQjs3FwC6wC1VVnkKwD1GBm3LjF4MNBHeCtPxmY
+         AfkDMYGhVorNgmMkb04l8MUqp1oAMOWwATxqAQbXzsNwFohpJnhjlcVSdhLDrQtthrZ1
+         nkUVVY93bsKMK1BpYLw2xWQ75wOGh1Iu3Yd+jBqnx8+DPk34K9YCWmAB2DviJ42KVR0w
+         2EOh+T9CkAnD7+/52yIL237IcPqzVpcPXZptTJtmUfIODJc6v/XcEBLuYHSyS8Ul5Ljo
+         /fGg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=DUvRUSfXStoeXSkc9i79c7RJdVlqemzxxNYTIllTK7U=;
+        b=mdZ2RdEWUCeCWcdfETaNFKX98N+VDXjq8Fa6ViiF1Uh90OiM7LaEDLho4JsD7OSLv8
+         BEUYntr5FH9274AZotsz05JgZYPW8KNCqfBbSqN9y4id5ILtgu8J1va3zOCVFCEBoagZ
+         55N3UbA5wngi+Dej56YAuF//G3uriZsO1S76D69QIDAGcwI4Fl/eUStGs0YYGQobGxZA
+         J9QBbvjYdH6DNA6ffdFt5d4W6tKOsh8aHCa4ygkvqsr33B6pZwE6yNBBwoLCEu0se9xD
+         AeEaQaVq7jCwKp7VOFzx6aDo4kGnCuhDc2xsjxN/kg9LrgUCvBQc6yeHNCxSl88iMkhV
+         h/zQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b="cpq0d/Ta";
+       spf=pass (google.com: domain of alex.krupp@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alex.krupp@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alex.krupp@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id o15-20020a17090a678f00b001efb982839asor4780540pjj.3.2022.07.25.09.38.27
+        for <alex.krupp@fwdeveryone.com>
+        (Google Transport Security);
+        Mon, 25 Jul 2022 09:38:27 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alex.krupp@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b="cpq0d/Ta";
+       spf=pass (google.com: domain of alex.krupp@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alex.krupp@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=DUvRUSfXStoeXSkc9i79c7RJdVlqemzxxNYTIllTK7U=;
+        b=cpq0d/TaeiqtJrl+t5OEiefc8JfzBEr11OEpHMfb77EcV5yEqD2Iu2Zg+vNWxRnAbn
+         rwZEsnp6aTHxHJoZUiJSzwV33lKnitpsyzyEaqn3Z6bXPuJe2P1mTD9Gfa4WJTGw6dml
+         2JhoLoIanmZbPmjpgyGTV9AHtCTSAZnUBABpTp4j2uroI+BMxt/jGaLGjnLXjO8oNZ7s
+         dhW+CpzjkCt2XLblO+yzqoIFgRP6xJKiQDlZdS4wJKYhCZWcM/6uk8627uInWdMPiWuL
+         lE8LoczUTGmmoQ5qKO/JGZX8Wc5HOd1Qo5rprD3u6IJncS2GFiT5427It2Wl3KDhRX9a
+         UFQw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=DUvRUSfXStoeXSkc9i79c7RJdVlqemzxxNYTIllTK7U=;
+        b=bAYosbycmWLu6HOwwrMV9zveuvf+fK0ZpM/NmaFYsk828lWcWnGG9+Sv+0sxopE4j3
+         +QN3+5cNFf0yVGcImMLHh1rjZfm5eN+o13wSJg9pENrr0v4Pllr0u/jt+ie1TZb1/B1a
+         CprW2ZtF9hStda+zYdEHFpck67oStz3LvSxssKnJ6Dti1DdwfZXwzosMSdizLN4Gz1DN
+         lFXhGLLZbccnrgkFt6rh9L2IdlIRVlU4PGNx3Mcw6I/Xz7eWRcLMh495Q4VU4L5yb0yo
+         Lu7NSDsnRT1mQ9UMyDUoIMC73tyeZEGFl9qYtJMrZ6blAUXl2T+J6QLKiBROWhWyfKCC
+         vO7g==
+X-Gm-Message-State: AJIora/CONKCgSos5wSYkt3Ron067YPdTN9N1e4p+6V6YiXTFToyIEak
+	+6PwZWPdLJuh44Un6K0wEh8aUy4bm34CRxrN7PR8423S/30=
+X-Google-Smtp-Source: AGRyM1vCzQcn9bQ5x2t27MZU7layfZyMde9KXlhP1y3gqLqvXWBnsX5d0pZM0OlAsktqIs+tqAhzZfvsszOnzhOUv+0=
+X-Received: by 2002:a17:90a:bd08:b0:1f2:e4b8:db72 with SMTP id
+ y8-20020a17090abd0800b001f2e4b8db72mr665596pjr.37.1658767106803; Mon, 25 Jul
+ 2022 09:38:26 -0700 (PDT)
+MIME-Version: 1.0
+From: Alex Krupp <alex.krupp@gmail.com>
+Date: Mon, 25 Jul 2022 12:37:50 -0400
+Message-ID: <CAOMQBP-mzgaf+73RJ4CwBK4LSHxksZJEuaQaMVTXuWCtw+U1Hw@mail.gmail.com>
+Subject: Email formatting test
+To: Alex Krupp <alex.krupp@fwdeveryone.com>
+Content-Type: multipart/alternative; boundary="0000000000002a8d6705e4a3d03a"
+
+--0000000000002a8d6705e4a3d03a
+Content-Type: text/plain; charset="UTF-8"
+
+Paragraph 1 paragraph 1 Paragraph 1 paragraph 1 paragraph 1 paragraph 1
+paragraph 1 paragraph 1 paragraph 1 paragraph 1 paragraph 1 paragraph 1
+paragraph 1 paragraph 1 paragraph 1.
+
+   - Bullet point
+      - Nested bullet point
+      - Nested bullet point
+   - Bullet point
+
+Paragraph 2 paragraph 2 Paragraph 2 paragraph 2 paragraph 2 paragraph 2
+paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2
+paragraph 2 paragraph 2 paragraph 2.
+
+   1. Numbered item
+      1. Nested numbered item
+      2. Nested numbered item
+   2. Numbered item
+
+Paragraph 3 paragraph 3 paragraph 3 paragraph 3 paragraph 3 paragraph 3
+paragraph 3 paragraph 3 paragraph 3 paragraph 3 paragraph 3 paragraph 3
+paragraph 3.
+
+Block quote block quote block quote block quote block quote block quote
+> block quote block quote block quote
+
+
+Paragraph 4 paragraph 4 paragraph 4 paragraph 4 paragraph 4 paragraph 4
+paragraph 4 paragraph 4 paragraph 4.
+
+Alex
+
+-- 
+
+Alex Krupp
+Cell: (607) 351 2671
+
+Read my Email: www.fwdeveryone.com/u/alex3917
+Subscribe to my blog: https://alexkrupp.typepad.com/
+My homepage: www.alexkrupp.com
+
+--0000000000002a8d6705e4a3d03a
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div class=3D"gmail-gE gmail-iv gmail-gt" style=3D"font-si=
+ze:0.875rem;padding:20px 0px 0px;font-family:Roboto,RobotoDraft,Helvetica,A=
+rial,sans-serif"><span style=3D"font-family:Arial,Helvetica,sans-serif;font=
+-size:small">Paragraph 1 paragraph 1 Paragraph 1 paragraph 1 paragraph 1 pa=
+ragraph 1 paragraph 1 paragraph 1 paragraph 1 paragraph 1 paragraph 1 parag=
+raph 1 paragraph 1 paragraph 1 paragraph 1.</span><br></div><div class=3D"g=
+mail-" style=3D"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif;f=
+ont-size:medium"><div id=3D"gmail-:22g" class=3D"gmail-ii gmail-gt" style=
+=3D"direction:ltr;margin:8px 0px 0px;padding:0px;font-size:0.875rem"><div i=
+d=3D"gmail-:22f" class=3D"gmail-a3s gmail-aiL" style=3D"font-variant-numeri=
+c:normal;font-variant-east-asian:normal;font-stretch:normal;font-size:small=
+;line-height:1.5;font-family:Arial,Helvetica,sans-serif;overflow:hidden"><d=
+iv dir=3D"ltr"><div><ul><li style=3D"margin-left:15px">Bullet point</li><ul=
+><li style=3D"margin-left:15px">Nested bullet point</li><li style=3D"margin=
+-left:15px">Nested bullet point</li></ul><li style=3D"margin-left:15px">Bul=
+let point</li></ul><div>Paragraph 2 paragraph 2 Paragraph 2 paragraph 2 par=
+agraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragr=
+aph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2.<br></div><div><ol><l=
+i style=3D"margin-left:15px">Numbered item</li><ol><li style=3D"margin-left=
+:15px">Nested numbered item</li><li style=3D"margin-left:15px">Nested numbe=
+red item</li></ol><li style=3D"margin-left:15px">Numbered item</li></ol><di=
+v>Paragraph 3 paragraph 3 paragraph 3 paragraph 3 paragraph 3 paragraph 3 p=
+aragraph 3 paragraph 3 paragraph 3 paragraph 3 paragraph 3 paragraph 3 para=
+graph 3.<br></div><div><br></div><blockquote class=3D"gmail_quote" style=3D=
+"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-le=
+ft:1ex">Block quote block quote block quote block quote block quote block q=
+uote block quote block quote block quote=C2=A0</blockquote></div><div><br><=
+/div><div>Paragraph 4 paragraph 4 paragraph 4 paragraph 4 paragraph 4 parag=
+raph 4 paragraph 4 paragraph 4 paragraph 4.</div></div><div><br></div><div>=
+Alex</div><div><br></div></div></div></div></div>-- <br><div dir=3D"ltr" cl=
+ass=3D"gmail_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"=
+><div><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=3D"ltr"><div><di=
+v dir=3D"ltr"><pre cols=3D"72">Alex Krupp
+Cell: (607) 351 2671<br></pre><pre cols=3D"72">Read my Email: <a href=3D"ht=
+tps://www.fwdeveryone.com/u/alex3917" target=3D"_blank">www.fwdeveryone.com=
+/u/alex3917</a>
+Subscribe to my blog: <a href=3D"https://alexkrupp.typepad.com/" target=3D"=
+_blank">https://alexkrupp.typepad.com/</a>
+My homepage: <a href=3D"https://www.alexkrupp.com" target=3D"_blank">www.al=
+exkrupp.com</a></pre></div></div></div></div></div></div></div></div></div>=
+</div></div>
+
+--0000000000002a8d6705e4a3d03a--

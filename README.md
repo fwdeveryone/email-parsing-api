@@ -1,6 +1,12 @@
-# email-parsing-api
+# FWD:Everyone Email Parsing API
 
-This repository contains a Python3 script for downloading a thread from any Gmail or G Suite inbox, and then parsing it using the FWD:Everyone email parsing API. Note that while specific script only interfaces with G Suite, the actual endpoint can accept email from any provider &mdash; Outlook, Mailgun, Nylas, etc.
+This repository contains:
+ - A Python3 script for downloading a thread from any Gmail or G Suite inbox, and then parsing it using the FWD:Everyone email parsing API.
+    - Note that while specific script only interfaces with G Suite, the actual endpoint can accept email from any provider &mdash; Outlook, Mailgun, Nylas, etc.
+    - For JavaScript code that does the same thing, c.f. the source code for: https://api-demo.fwdeveryone.com/
+ - Python and Ruby starter scripts for parsing locally-stored RFC 2822 messages.
+    - Parse messages stored in a database, e.g. after they've been retrieved from somewhere like Mailgun or Postmark.
+    - You can parse the .eml file you get when clicking 'Download message' on any Gmail message (except messages sent to yourself).
 
 The email parsing API currently does two things:
 
@@ -15,7 +21,7 @@ The email parsing API endpoint not require authentication, but non-authenticated
 
 To learn more, and for a web-based interactive demo of this API, visit https://api-demo.fwdeveryone.com.
 
-## Instructions
+## Downloading messages via the Gmail API
 
 1. Clone this repository, e.g. with `git clone https://github.com/fwdeveryone/email-parsing-api.git`
 2. Inside the repository folder, create and activate a Python virtualenv: `python3 -m venv . && . bin/activate`
