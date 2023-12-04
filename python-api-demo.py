@@ -1,5 +1,6 @@
 import json
 import os.path
+import os
 from pprint import pprint
 
 from google.auth.transport.requests import Request
@@ -14,6 +15,13 @@ THREAD_ID = '181454409ba590cf'
 OAUTH_SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 
 
+def _launch_local_auth_flow():
+    flow = InstalledAppFlow.from_client_secrets_file('credentials.json', OAUTH_SCOPES)
+    oauth_credentials = flow.run_local_server(port=0)
+
+    return oauth_credentials
+
+
 def _get_google_oauth_credentials():
     oauth_credentials = None
 
@@ -25,10 +33,13 @@ def _get_google_oauth_credentials():
     # If there are no (valid) credentials available, let the user log in.
     if not oauth_credentials or not oauth_credentials.valid:
         if oauth_credentials and oauth_credentials.expired and oauth_credentials.refresh_token:
-            oauth_credentials.refresh(Request())
+            try:
+                oauth_credentials.refresh(Request())
+            except Exception as e:
+                os.remove('./token.json')
+                oauth_credentials = _launch_local_auth_flow()
         else:
-            flow = InstalledAppFlow.from_client_secrets_file('credentials.json', OAUTH_SCOPES)
-            oauth_credentials = flow.run_local_server(port=0)
+            oauth_credentials = _launch_local_auth_flow()
         # Save the credentials for the next run
         with open('token.json', 'w') as token:
             token.write(oauth_credentials.to_json())
