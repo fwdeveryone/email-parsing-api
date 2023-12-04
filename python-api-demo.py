@@ -1,6 +1,6 @@
 import json
-import os.path
 import os
+import os.path
 from pprint import pprint
 
 from google.auth.transport.requests import Request
